@@ -112,6 +112,11 @@ ALTER TABLE `companies`
 	FOREIGN KEY (`type`) REFERENCES `type` (`id`) ON DELETE Restrict ON UPDATE Restrict
 ;
 
+ALTER TABLE `company` 
+ ADD CONSTRAINT `FK_company_companies`
+	FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`) ON DELETE Restrict ON UPDATE Restrict
+;
+
 ALTER TABLE `debt` 
  ADD CONSTRAINT `FK_debt_companies`
 	FOREIGN KEY (`company`) REFERENCES `companies` (`id`) ON DELETE Restrict ON UPDATE Restrict
@@ -120,6 +125,16 @@ ALTER TABLE `debt`
 ALTER TABLE `employees` 
  ADD CONSTRAINT `FK_employees_companies`
 	FOREIGN KEY (`company`) REFERENCES `companies` (`id`) ON DELETE Restrict ON UPDATE Restrict
+;
+
+ALTER TABLE `relations` 
+ ADD CONSTRAINT `FK_relations_tax_rates`
+	FOREIGN KEY (`rate_id`) REFERENCES `tax_rates` (`id`) ON DELETE Restrict ON UPDATE Restrict
+;
+
+ALTER TABLE `relations` 
+ ADD CONSTRAINT `FK_relations_type`
+	FOREIGN KEY (`type`) REFERENCES `type` (`id`) ON DELETE Restrict ON UPDATE Restrict
 ;
 
 SET FOREIGN_KEY_CHECKS=1;
