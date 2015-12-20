@@ -142,10 +142,14 @@ SET FOREIGN_KEY_CHECKS=1;
 
 
 load data local infile 'acc.txt' into table chief_accountant;
-load data local infile 'tax_rates.txt' into table tax_rates;
 load data local infile 'types.txt' into table type;
-load data local infile 'relations.txt' into table relations;
+load data local infile 'tax_rates.txt' into table tax_rates;
 load data local infile 'com.txt' into table companies;
 load data local infile 'emp.txt' into table employees;
 load data local infile 'cmp.txt' into table company;
 load data local infile 'deb.txt' into table debt;
+insert into relations (type,rate_id) values (1,1);
+insert into relations (type,rate_id) values (1,2);
+insert into relations (type,rate_id) values (1,3);
+insert into relations (type,rate_id) values (2,4);
+insert into relations (type,rate_id) values (2,5);
