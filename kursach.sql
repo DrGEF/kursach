@@ -39,12 +39,12 @@ CREATE TABLE `chief_accountant`
 CREATE TABLE `companies`
 (
 	`id` INT NOT NULL AUTO_INCREMENT ,
-	`Company name` VARCHAR(50) NOT NULL,
-	`Country` VARCHAR(50) NOT NULL,
+	`company_name` VARCHAR(50) NOT NULL,
+	`country` VARCHAR(50) NOT NULL,
 	`state` VARCHAR(50) NOT NULL,
 	`type` INT NOT NULL,
-	`Accountant` INT,
-	`contact number` CHAR(12),
+	`accountant` INT,
+	`contact_number` CHAR(12),
 	`served` DATE NOT NULL,
 	CONSTRAINT `PK_Table1` PRIMARY KEY (`id`)
 )
@@ -62,7 +62,7 @@ CREATE TABLE `company`
 CREATE TABLE `debt`
 (
 	`company` INT,
-	`amount of indebtedness` INT,
+	`amount_of_indebtedness` INT,
 	`destination` INT
 )
 ;
@@ -126,11 +126,11 @@ SET FOREIGN_KEY_CHECKS=1;
 
 
 
-load data local infile 'C:\\workspace\\git\\kursach\\acc.txt' into table chief_accountant;
-load data local infile 'C:\\workspace\\git\\kursach\\tax_rates.txt' into table tax_rates;
-load data local infile 'C:\\workspace\\git\\kursach\\types.txt' into table type;
-load data local infile 'C:\\workspace\\git\\kursach\\relations.txt' into table relations;
-load data local infile 'C:\\workspace\\git\\kursach\\com.txt' into table companies;
-load data local infile 'C:\\workspace\\git\\kursach\\emp.txt' into table employees;
-load data local infile 'C:\\workspace\\git\\kursach\\cmp.txt' into table company;
-load data local infile 'C:\\workspace\\git\\kursach\\deb.txt' into table debt;
+load data local infile 'acc.txt' into table chief_accountant;
+load data local infile 'tax_rates.txt' into table tax_rates;
+load data local infile 'types.txt' into table type;
+load data local infile 'relations.txt' into table relations;
+load data local infile 'com.txt' into table companies;
+load data local infile 'emp.txt' into table employees;
+load data local infile 'cmp.txt' into table company;
+load data local infile 'deb.txt' into table debt;
