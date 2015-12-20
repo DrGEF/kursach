@@ -1,4 +1,8 @@
-SET FOREIGN_KEY_CHECKS=0
+DROP database IF EXISTS kursach;
+create database kursach;
+use kursach;
+
+SET FOREIGN_KEY_CHECKS=0;
 
 DROP TABLE IF EXISTS `chief_accountant` CASCADE
 ;
@@ -118,4 +122,15 @@ ALTER TABLE `employees`
 	FOREIGN KEY (`company`) REFERENCES `companies` (`id`) ON DELETE Restrict ON UPDATE Restrict
 ;
 
-SET FOREIGN_KEY_CHECKS=1
+SET FOREIGN_KEY_CHECKS=1;
+
+
+
+load data local infile 'C:\\workspace\\git\\kursach\\acc.txt' into table chief_accountant;
+load data local infile 'C:\\workspace\\git\\kursach\\tax_rates.txt' into table tax_rates;
+load data local infile 'C:\\workspace\\git\\kursach\\types.txt' into table type;
+load data local infile 'C:\\workspace\\git\\kursach\\relations.txt' into table relations;
+load data local infile 'C:\\workspace\\git\\kursach\\com.txt' into table companies;
+load data local infile 'C:\\workspace\\git\\kursach\\emp.txt' into table employees;
+load data local infile 'C:\\workspace\\git\\kursach\\cmp.txt' into table company;
+load data local infile 'C:\\workspace\\git\\kursach\\deb.txt' into table debt;
