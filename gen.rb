@@ -76,9 +76,9 @@ def deb amount=35
 			id = rand(1..40).to_s
 			dst = rand(1..40).to_s
 			dst = rand(1..40).to_s if id == dst
-			f.puts id + T + rand(1000..200000).to_s + T + dst
+			f.puts id + T + rand(1000..200000).to_s + T + dst + T + rand(0..1).to_s
 		end
 	f.close
 end
 
-com
+deb

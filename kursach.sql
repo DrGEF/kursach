@@ -63,7 +63,8 @@ CREATE TABLE `debt`
 (
 	`company` INT,
 	`amount_of_indebtedness` INT,
-	`destination` INT
+	`destination` INT,
+	`status` CHAR(20)
 )
 ;
 
